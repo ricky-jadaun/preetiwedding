@@ -63,37 +63,7 @@
             margin-top: 85px;
         }
 
-        @media (max-width: 768px) {
-            .hero-section {
-                /* background: linear-gradient(rgba(250, 248, 245, 0.7), rgba(250, 248, 245, 0.7)), url('../images/home-hero-mobile-bg.jpg') no-repeat center center/cover; */
-                background: linear-gradient(rgba(250, 248, 245, 0.7), rgba(250, 248, 245, 0.7)), url('../images/home-hero-bg.png') no-repeat center center/cover;
-                margin-top: 85px;
-                height: calc(80vh - 70px);
-            }
-            .logo-header-wrapper {
-                min-height: 200px;
-                margin-bottom: 10px;
-            }
-            .logo-header-wrapper img {
-                width: 180px;
-            }
-            .logo-header-wrapper h1 {
-                font-size: 2.2rem;
-                letter-spacing: 2px;
-            }
-            .hero-content p {
-                font-size: 1rem;
-                letter-spacing: 1px;
-            }
-            .logo-header-wrapper img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 250px;
-            z-index: 1;
-            }
-        }
+        
 
         .hero-content{
             position: relative;
@@ -128,6 +98,39 @@
             color: var(--text-main);
         }
 
+        @media (max-width: 768px) {
+            .hero-section {
+                /* background: linear-gradient(rgba(250, 248, 245, 0.7), rgba(250, 248, 245, 0.7)), url('../images/home-hero-mobile-bg.jpg') no-repeat center center/cover; */
+                background: linear-gradient(rgba(250, 248, 245, 0.7), rgba(250, 248, 245, 0.7)), url('../images/home-hero-bg.png') no-repeat center center/cover;
+                margin-top: 85px;
+                height: calc(80vh - 70px);
+            }
+            .logo-header-wrapper {
+                min-height: 200px;
+                margin-bottom: 10px;
+            }
+            .logo-header-wrapper img {
+                width: 180px;
+            }
+            .logo-header-wrapper h1 {
+                font-size: 2.2rem;
+                letter-spacing: 2px;
+            }
+            .hero-content p {
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+            .logo-header-wrapper img {
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            width: 250px !important;
+            z-index: 1 !important;
+            }
+        }
+
+        
         /* Custom Buttons */
         .btn-custom {
             background-color: transparent;
