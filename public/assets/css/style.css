@@ -40,15 +40,30 @@
         
         .nav-link {
             color: var(--text-main) !important;
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin: 0 10px;
+            letter-spacing: 1.2px;
+            margin: 0 8px;
             font-weight: 600;
         }
 
         .nav-link:hover {
             color: var(--accent-dark) !important;
+        }
+
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .nav-link {
+                font-size: 0.72rem;
+                margin: 0 4px;
+                letter-spacing: 0.8px;
+            }
+            .lang-switcher {
+                margin-left: 10px;
+                padding: 3px 3px 3px 8px;
+            }
+            .lang-btn {
+                padding: 4px 8px;
+            }
         }
 
         /* Hero Section */
