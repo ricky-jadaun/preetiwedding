@@ -67,7 +67,7 @@ export default function FrenchTravel() {
               <li className="nav-item"><Link className="nav-link" to="/fr#home">Accueil</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr#story">Notre Histoire</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr#schedule">Programme</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/fr/attire">Guide Vestimentaire</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/fr/attire">Tenues Indiennes</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr/travel">Guide de Voyage</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr/book-vijayran">Réserver</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr#rsvp">RSVP</Link></li>
