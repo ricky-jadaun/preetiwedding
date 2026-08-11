@@ -69,9 +69,9 @@ export default function FrenchTravel() {
               <li className="nav-item"><Link className="nav-link" to="/fr#schedule">Programme</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr/attire">Tenues Indiennes</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr/travel">Guide de Voyage</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/fr/book-vijayran">Réserver</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/fr/book-vijayran">Réserver Vijayran Palace</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr#rsvp">RSVP</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/fr#gifts">Cadeaux</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/fr#gifts">Cadeaux de mariage</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr#faq">FAQ</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr#contact">Contact</Link></li>
               <li className="nav-item d-none d-lg-inline-flex">

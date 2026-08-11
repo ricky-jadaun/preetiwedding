@@ -67,11 +67,11 @@ export default function Travel() {
               <li className="nav-item"><Link className="nav-link" to="/#home">Home</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#story">Our Story</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#schedule">Itinerary</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/attire">Attire Guide</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/attire">Indian Attire</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/travel">Travel Guide</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/book-vijayran">Book Vijayran Palace</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#rsvp">RSVP</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/#gifts">Gifts</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/#gifts">Wedding Gifts</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#faq">FAQ</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#contact">Contact</Link></li>
               <li className="nav-item d-none d-lg-inline-flex">

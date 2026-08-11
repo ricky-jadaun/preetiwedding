@@ -66,11 +66,11 @@ export default function Attire() {
               <li className="nav-item"><Link className="nav-link" to="/#home">Home</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#story">Our Story</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#schedule">Itinerary</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/attire">Attire Guide</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/attire">Indian Attire</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/travel">Travel Guide</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/book-vijayran">Book Vijayran Palace</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#rsvp">RSVP</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/#gifts">Gifts</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/#gifts">Wedding Gifts</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#faq">FAQ</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#contact">Contact</Link></li>
               <li className="nav-item d-none d-lg-inline-flex">
@@ -89,7 +89,7 @@ export default function Attire() {
       <header 
         className="subpage-header corner-decor-wrap" 
         style={{ 
-          background: `linear-gradient(rgba(250, 248, 245, 0.85), rgba(250, 248, 245, 0.85)), url('${getImageUrl(content.hero.bgImage)}') no-repeat center center/cover` 
+          background: `linear-gradient(rgba(250, 248, 245, 0.85), rgba(250, 248, 245, 0.85)), url('${getImageUrl(content.hero.bgImage || '/assets/images/attire-jaipur-colors.jpg')}') no-repeat center center/cover` 
         }}
       >
         <div className="corner-ornament top-left"></div>
