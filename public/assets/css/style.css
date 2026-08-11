@@ -103,30 +103,38 @@
                 /* background: linear-gradient(rgba(250, 248, 245, 0.7), rgba(250, 248, 245, 0.7)), url('../images/home-hero-mobile-bg.jpg') no-repeat center center/cover; */
                 background: linear-gradient(rgba(250, 248, 245, 0.7), rgba(250, 248, 245, 0.7)), url('../images/home-hero-bg.png') no-repeat center center/cover;
                 margin-top: 85px;
-                height: calc(80vh - 70px);
+                min-height: calc(80vh - 70px);
+                height: auto;
+                padding: 40px 0;
             }
             .logo-header-wrapper {
-                min-height: 200px;
-                margin-bottom: 10px;
+                min-height: auto;
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
             .logo-header-wrapper img {
-                width: 180px;
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+                width: 180px !important;
+                height: auto;
+                z-index: 1 !important;
+                margin: 0 auto 15px auto !important;
             }
             .logo-header-wrapper h1 {
+                position: relative;
                 font-size: 2.2rem;
                 letter-spacing: 2px;
+                z-index: 2;
+                margin: 0 0 10px 0;
             }
             .hero-content p {
                 font-size: 1rem;
                 letter-spacing: 1px;
-            }
-            .logo-header-wrapper img {
-            position: absolute !important;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            width: 250px !important;
-            z-index: 1 !important;
             }
         }
 
