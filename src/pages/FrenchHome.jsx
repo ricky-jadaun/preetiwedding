@@ -183,9 +183,9 @@ export default function FrenchHome() {
       </section>
 
       {/* Quick Links Grid */}
-      <section className="container my-5 py-4">
+      {/* <section className="container my-5 py-4">
         <div className="row g-4 justify-content-center">
-          {/* Pre-Wedding Schedule */}
+          
           <div className="col-6 col-sm-4 col-md-3 col-lg-2">
             <Link to="/fr#schedule" className="quick-link-card" data-tab="day1-tab">
               <div className="quick-link-icon-wrap">
@@ -194,7 +194,7 @@ export default function FrenchHome() {
               <h5 className="text-center">{content.quickLinks.link1}</h5>
             </Link>
           </div>
-          {/* The Wedding Celebrations */}
+          
           <div className="col-6 col-sm-4 col-md-3 col-lg-2">
             <Link to="/fr#schedule" className="quick-link-card" data-tab="day2-tab">
               <div className="quick-link-icon-wrap">
@@ -203,7 +203,7 @@ export default function FrenchHome() {
               <h5 className="text-center">{content.quickLinks.link2}</h5>
             </Link>
           </div>
-          {/* Post-Wedding Schedule */}
+          
           <div className="col-6 col-sm-4 col-md-3 col-lg-2">
             <Link to="/fr#schedule" className="quick-link-card">
               <div className="quick-link-icon-wrap">
@@ -212,7 +212,7 @@ export default function FrenchHome() {
               <h5 className="text-center">{content.quickLinks.link3}</h5>
             </Link>
           </div>
-          {/* Indian Attire */}
+          
           <div className="col-6 col-sm-4 col-md-3 col-lg-2">
             <Link to="/fr/attire" className="quick-link-card">
               <div className="quick-link-icon-wrap">
@@ -221,7 +221,7 @@ export default function FrenchHome() {
               <h5 className="text-center">{content.quickLinks.link4}</h5>
             </Link>
           </div>
-          {/* Travel Guide – India */}
+          
           <div className="col-6 col-sm-4 col-md-3 col-lg-2">
             <Link to="/fr/travel" className="quick-link-card">
               <div className="quick-link-icon-wrap">
@@ -230,7 +230,7 @@ export default function FrenchHome() {
               <h5 className="text-center">{content.quickLinks.link5}</h5>
             </Link>
           </div>
-          {/* RSVP */}
+          
           <div className="col-6 col-sm-4 col-md-3 col-lg-2">
             <Link to="/fr#rsvp" className="quick-link-card">
               <div className="quick-link-icon-wrap">
@@ -240,7 +240,7 @@ export default function FrenchHome() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Story */}
       <section id="story" className="corner-decor-wrap">
