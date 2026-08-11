@@ -54,7 +54,7 @@
         /* Hero Section */
         .hero-section {
             background: linear-gradient(rgba(250, 248, 245, 0.1), rgba(250, 248, 245, 0.1)), url('../images/home-hero-bg.png') no-repeat center bottom/cover;
-            height: 120vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
