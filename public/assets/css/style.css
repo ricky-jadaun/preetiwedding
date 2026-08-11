@@ -136,6 +136,24 @@
                 font-size: 1rem;
                 letter-spacing: 1px;
             }
+            #countdown {
+                gap: 8px !important;
+                margin-top: 1.5rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+            .countdown-item {
+                min-width: 68px !important;
+                padding: 10px 5px !important;
+                border-radius: 6px !important;
+            }
+            .countdown-value {
+                font-size: 1.5rem !important;
+            }
+            .countdown-label {
+                font-size: 0.65rem !important;
+                letter-spacing: 0.5px !important;
+                margin-top: 3px !important;
+            }
         }
 
         
