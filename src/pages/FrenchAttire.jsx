@@ -148,6 +148,14 @@ export default function FrenchAttire() {
               </div>
             ))}
           </div>
+          {content.sections.men.note && (
+            <div className="mt-4 p-3 border-start border-info bg-light mx-auto" style={{ maxWidth: '700px', borderRadius: '0 8px 8px 0' }}>
+              <p className="mb-0 text-muted" style={{ fontSize: '0.95rem' }}>
+                <i className="fa-solid fa-circle-info text-info me-2"></i>
+                {content.sections.men.note}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Where to Buy Indian Outfits Section */}

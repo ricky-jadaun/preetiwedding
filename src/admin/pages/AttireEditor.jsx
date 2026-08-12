@@ -54,7 +54,7 @@ export default function AttireEditor() {
   const handleSectionFieldChange = (section, field, value) => {
     setContent((prev) => {
       const updated = { ...prev };
-      updated[section] = { ...updated[section], [field]: value };
+      updated.sections[section] = { ...updated.sections[section], [field]: value };
       return updated;
     });
   };
@@ -416,6 +416,17 @@ export default function AttireEditor() {
                 </div>
               </div>
             ))}
+
+            <div className="admin-form-group" style={{ marginTop: '20px', borderTop: '1px dashed #d4d6df', paddingTop: '15px' }}>
+              <label>Men's Attire Section Note (Optional)</label>
+              <textarea 
+                className="admin-textarea" 
+                rows="3" 
+                placeholder="Enter note here..."
+                value={content.sections.men.note || ''} 
+                onChange={(e) => handleSectionFieldChange('men', 'note', e.target.value)}
+              ></textarea>
+            </div>
           </div>
 
           {/* WHERE TO BUY SECTION */}
