@@ -1075,38 +1075,39 @@
 
         .corner-ornament {
             position: absolute;
-            width: 150px;
-            height: 150px;
+            width: 135px;
+            height: 135px;
             background-image: url('../images/abstract.png') !important;
             background-size: contain;
             background-repeat: no-repeat;
             pointer-events: none;
+            transform: rotate(90deg);
             z-index: 1;
             opacity: 0.65;
             transition: all 0.3s ease;
         }
 
         .corner-ornament.top-left {
-            top: 20px;
-            left: 20px;
+            top: 0px;
+            left: 0px;
         }
 
         .corner-ornament.top-right {
-            top: 20px;
-            right: 20px;
-            transform: scaleX(-1);
+            top: 0px;
+            right: 0px;
+            transform: scale(-1);
         }
 
         .corner-ornament.bottom-left {
-            bottom: 20px;
-            left: 20px;
-            transform: scaleY(-1);
+            bottom: 0px;
+            left: 0px;
+            transform: scaleX(1);
         }
 
         .corner-ornament.bottom-right {
-            bottom: 20px;
-            right: 20px;
-            transform: scale(-1);
+            bottom: 0px;
+            right: 0px;
+            transform: scaleX(-1);
         }
 
         /* Adjust size for smaller screens */

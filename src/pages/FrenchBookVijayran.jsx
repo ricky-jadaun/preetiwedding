@@ -90,10 +90,10 @@ export default function FrenchBookVijayran() {
           background: `linear-gradient(rgba(250, 248, 245, 0.85), rgba(250, 248, 245, 0.85)), url('${getImageUrl(content.hero.bgImage || '/assets/images/vijayran_palace.png')}') no-repeat center center/cover` 
         }}
       >
-        <div className="corner-ornament top-left"></div>
-        <div className="corner-ornament top-right"></div>
         <div className="corner-ornament bottom-left"></div>
         <div className="corner-ornament bottom-right"></div>
+        <div className="corner-ornament top-left"></div>
+        <div className="corner-ornament top-right"></div>
         
         <div className="container">
           <h1 className="subpage-title">{content.hero.title}</h1>

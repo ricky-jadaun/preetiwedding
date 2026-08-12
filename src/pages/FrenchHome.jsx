@@ -168,7 +168,8 @@ export default function FrenchHome() {
 
       {/* Hero Section */}
       <section id="home" className="hero-section corner-decor-wrap">
-        <div className="corner-ornament top-right"></div>
+        <div className="corner-ornament top-left d-lg-none"></div>
+        <div className="corner-ornament top-right d-lg-none"></div>
         
         <div className="container hero-content">
           <div className="logo-header-wrapper">
