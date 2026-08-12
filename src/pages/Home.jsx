@@ -152,7 +152,7 @@ export default function Home() {
               <li className="nav-item"><Link className="nav-link" to="/#schedule">Itinerary</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/attire">Indian Attire</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/travel">Travel Guide</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/book-vijayran">Book Vijayran Palace</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/book-vijayran">Booking Vijayran Palace</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#rsvp">RSVP</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#gifts">Wedding Gifts</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/#faq">FAQ</Link></li>

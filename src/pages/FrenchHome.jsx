@@ -149,7 +149,7 @@ export default function FrenchHome() {
               <li className="nav-item"><Link className="nav-link" to="/fr#schedule">Programme</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr/attire">Tenues Indiennes</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr/travel">Guide de Voyage</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/fr/book-vijayran">Réserver Vijayran Palace</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/fr/book-vijayran">Réservation Vijayran Palace</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr#rsvp">RSVP</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr#gifts">Cadeaux de mariage</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/fr#faq">FAQ</Link></li>
