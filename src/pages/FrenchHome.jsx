@@ -322,9 +322,45 @@ export default function FrenchHome() {
                         <div className="itinerary-body col-md-9">
                           <h3 className="itinerary-title">{card.title}</h3>
                           <p className="itinerary-desc">{card.description}</p>
-                          {card.btnText && card.btnLink && (
-                            <Link to={`/fr${card.btnLink}`} className="btn btn-custom btn-sm">{card.btnText}</Link>
+
+                          {((card.btnText && card.btnLink) || card.link1Url || card.link2Url || card.link3Url) && (
+                            <div className="d-flex flex-wrap gap-2 mb-2">
+                              {card.btnText && card.btnLink && (
+                                <Link to={`/fr${card.btnLink}`} className="btn btn-custom btn-sm">{card.btnText}</Link>
+                              )}
+                              {card.link1Url && (
+                                <a 
+                                  href={card.link1Url} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer" 
+                                  className="btn btn-custom btn-sm"
+                                >
+                                  {card.link1Label || 'Link 1'}
+                                </a>
+                              )}
+                              {card.link2Url && (
+                                <a 
+                                  href={card.link2Url} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer" 
+                                  className="btn btn-custom btn-sm"
+                                >
+                                  {card.link2Label || 'Link 2'}
+                                </a>
+                              )}
+                              {card.link3Url && (
+                                <a 
+                                  href={card.link3Url} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer" 
+                                  className="btn btn-custom btn-sm"
+                                >
+                                  {card.link3Label || 'Link 3'}
+                                </a>
+                              )}
+                            </div>
                           )}
+
                           {card.dressCode && (
                             <span className="dress-code-badge">{card.dressCode}</span>
                           )}

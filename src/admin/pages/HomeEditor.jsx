@@ -144,7 +144,13 @@ export default function HomeEditor() {
         time: '',
         location: '',
         title: '',
-        description: ''
+        description: '',
+        link1Url: '',
+        link1Label: '',
+        link2Url: '',
+        link2Label: '',
+        link3Url: '',
+        link3Label: ''
       });
       return updated;
     });
@@ -541,7 +547,7 @@ export default function HomeEditor() {
                       </div>
 
                       {dayIdx === 0 && (
-                        <div className="row" style={{ display: 'flex', gap: '15px' }}>
+                        <div className="row" style={{ display: 'flex', gap: '15px', marginBottom: '10px' }}>
                           <div style={{ flex: 1 }}>
                             <label style={{ fontSize: '0.8rem', fontWeight: 600 }}>Link Button Label (Optional)</label>
                             <input 
@@ -562,6 +568,85 @@ export default function HomeEditor() {
                           </div>
                         </div>
                       )}
+
+                      {/* 3 External Admin Buttons */}
+                      <div style={{ borderTop: '1px dashed #d4d6df', marginTop: '15px', paddingTop: '15px' }}>
+                        <div style={{ fontSize: '0.85rem', fontWeight: 700, marginBottom: '10px', color: 'var(--admin-primary)' }}>
+                          External Action Buttons (opens in target="_blank") - Optional
+                        </div>
+                        
+                        {/* Button 1 */}
+                        <div className="row" style={{ display: 'flex', gap: '15px', marginBottom: '10px' }}>
+                          <div style={{ flex: 1 }}>
+                            <label style={{ fontSize: '0.75rem', fontWeight: 600 }}>Button 1 Label</label>
+                            <input 
+                              type="text" 
+                              className="admin-input" 
+                              placeholder="e.g. Google Maps"
+                              value={card.link1Label || ''} 
+                              onChange={(e) => handleCardChange(dayIdx, cardIdx, 'link1Label', e.target.value)}
+                            />
+                          </div>
+                          <div style={{ flex: 2 }}>
+                            <label style={{ fontSize: '0.75rem', fontWeight: 600 }}>Button 1 URL</label>
+                            <input 
+                              type="text" 
+                              className="admin-input" 
+                              placeholder="https://maps.google.com/..."
+                              value={card.link1Url || ''} 
+                              onChange={(e) => handleCardChange(dayIdx, cardIdx, 'link1Url', e.target.value)}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Button 2 */}
+                        <div className="row" style={{ display: 'flex', gap: '15px', marginBottom: '10px' }}>
+                          <div style={{ flex: 1 }}>
+                            <label style={{ fontSize: '0.75rem', fontWeight: 600 }}>Button 2 Label</label>
+                            <input 
+                              type="text" 
+                              className="admin-input" 
+                              placeholder="e.g. Venue Booking"
+                              value={card.link2Label || ''} 
+                              onChange={(e) => handleCardChange(dayIdx, cardIdx, 'link2Label', e.target.value)}
+                            />
+                          </div>
+                          <div style={{ flex: 2 }}>
+                            <label style={{ fontSize: '0.75rem', fontWeight: 600 }}>Button 2 URL</label>
+                            <input 
+                              type="text" 
+                              className="admin-input" 
+                              placeholder="https://example.com/..."
+                              value={card.link2Url || ''} 
+                              onChange={(e) => handleCardChange(dayIdx, cardIdx, 'link2Url', e.target.value)}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Button 3 */}
+                        <div className="row" style={{ display: 'flex', gap: '15px' }}>
+                          <div style={{ flex: 1 }}>
+                            <label style={{ fontSize: '0.75rem', fontWeight: 600 }}>Button 3 Label</label>
+                            <input 
+                              type="text" 
+                              className="admin-input" 
+                              placeholder="e.g. WhatsApp Group"
+                              value={card.link3Label || ''} 
+                              onChange={(e) => handleCardChange(dayIdx, cardIdx, 'link3Label', e.target.value)}
+                            />
+                          </div>
+                          <div style={{ flex: 2 }}>
+                            <label style={{ fontSize: '0.75rem', fontWeight: 600 }}>Button 3 URL</label>
+                            <input 
+                              type="text" 
+                              className="admin-input" 
+                              placeholder="https://chat.whatsapp.com/..."
+                              value={card.link3Url || ''} 
+                              onChange={(e) => handleCardChange(dayIdx, cardIdx, 'link3Url', e.target.value)}
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
                     <div className="array-item-actions">
