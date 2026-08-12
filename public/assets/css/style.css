@@ -1077,7 +1077,7 @@
             position: absolute;
             width: 150px;
             height: 150px;
-            background-image: url('../images/abstract.png');
+            background-image: url('../images/abstract.png') !important;
             background-size: contain;
             background-repeat: no-repeat;
             pointer-events: none;
