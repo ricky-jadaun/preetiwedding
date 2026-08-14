@@ -53,8 +53,8 @@ export function usePageData(pageName) {
 // Helper to construct dynamic image URLs pointing to backend upload folders if uploaded via Multer
 export const getImageUrl = (url) => {
   if (!url) return '';
-  // If it's a relative path to static assets (starts with /assets/), return as-is
-  if (url.startsWith('/assets/')) {
+  // If it's a relative path to static assets, an absolute URL (e.g., Cloudinary), or a data URL, return as-is
+  if (url.startsWith('/assets/') || url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
     return url;
   }
   // Otherwise, it's an uploaded asset served by the backend server

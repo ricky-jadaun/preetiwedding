@@ -172,7 +172,7 @@ export default function ImageLibraryModal({ isOpen, onClose, onSelect, currentVa
                     className={`image-grid-item ${isSelected ? 'selected' : ''}`}
                     onClick={() => setSelectedImage(img.url)}
                   >
-                    <img src={`${apiURL}${img.url}`} alt={img.originalname} />
+                    <img src={img.url.startsWith('http') ? img.url : `${apiURL}${img.url}`} alt={img.originalname} />
                     <button
                       onClick={(e) => handleDelete(img._id, img.filename, e)}
                       style={deleteImgBtnStyle}

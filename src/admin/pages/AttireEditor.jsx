@@ -17,6 +17,14 @@ export default function AttireEditor() {
 
   const apiURL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
+  const getImageUrl = (url) => {
+    if (!url) return '';
+    if (url.startsWith('/assets') || url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    return `${apiURL}${url}`;
+  };
+
   useEffect(() => {
     fetchPageData();
   }, []);
@@ -270,7 +278,7 @@ export default function AttireEditor() {
               <label>Banner Background Image</label>
               <div className="admin-image-preview-container">
                 <img 
-                  src={content.hero.bgImage.startsWith('/assets') ? content.hero.bgImage : `${apiURL}${content.hero.bgImage}`} 
+                  src={getImageUrl(content.hero.bgImage)} 
                   alt="Banner BG" 
                   className="admin-image-preview"
                 />
@@ -344,7 +352,7 @@ export default function AttireEditor() {
                     <label style={{ fontSize: '0.8rem', fontWeight: 600 }}>Card Image</label>
                     <div className="admin-image-preview-container">
                       <img 
-                        src={card.image.startsWith('/assets') ? card.image : `${apiURL}${card.image}`} 
+                        src={getImageUrl(card.image)} 
                         alt={card.title} 
                         className="admin-image-preview"
                       />
@@ -400,7 +408,7 @@ export default function AttireEditor() {
                     <label style={{ fontSize: '0.8rem', fontWeight: 600 }}>Card Image</label>
                     <div className="admin-image-preview-container">
                       <img 
-                        src={card.image.startsWith('/assets') ? card.image : `${apiURL}${card.image}`} 
+                        src={getImageUrl(card.image)} 
                         alt={card.title} 
                         className="admin-image-preview"
                       />

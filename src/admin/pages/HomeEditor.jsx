@@ -17,6 +17,14 @@ export default function HomeEditor() {
 
   const apiURL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
+  const getImageUrl = (url) => {
+    if (!url) return '';
+    if (url.startsWith('/assets') || url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    return `${apiURL}${url}`;
+  };
+
   useEffect(() => {
     fetchPageData();
   }, []);
@@ -347,7 +355,7 @@ export default function HomeEditor() {
               <label>Hero Logo Image</label>
               <div className="admin-image-preview-container">
                 <img 
-                  src={content.hero.logo.startsWith('/assets') ? content.hero.logo : `${apiURL}${content.hero.logo}`} 
+                  src={getImageUrl(content.hero.logo)} 
                   alt="Hero Logo" 
                   className="admin-image-preview" 
                   onError={(e) => { e.target.src = '/assets/images/p-h-logo.png'; }}
@@ -396,7 +404,7 @@ export default function HomeEditor() {
               <label>Section Story Image</label>
               <div className="admin-image-preview-container">
                 <img 
-                  src={content.story.image.startsWith('/assets') ? content.story.image : `${apiURL}${content.story.image}`} 
+                  src={getImageUrl(content.story.image)} 
                   alt="Story" 
                   className="admin-image-preview"
                 />
@@ -713,7 +721,7 @@ export default function HomeEditor() {
                   <label>Card Image</label>
                   <div className="admin-image-preview-container">
                     <img 
-                      src={content.attireSection.image.startsWith('/assets') ? content.attireSection.image : `${apiURL}${content.attireSection.image}`} 
+                      src={getImageUrl(content.attireSection.image)} 
                       alt="Attire Guide Card" 
                       className="admin-image-preview"
                     />
@@ -762,7 +770,7 @@ export default function HomeEditor() {
                   <label>Card Image</label>
                   <div className="admin-image-preview-container">
                     <img 
-                      src={content.travelSection.image.startsWith('/assets') ? content.travelSection.image : `${apiURL}${content.travelSection.image}`} 
+                      src={getImageUrl(content.travelSection.image)} 
                       alt="Travel Guide Card" 
                       className="admin-image-preview"
                     />
@@ -1258,7 +1266,7 @@ export default function HomeEditor() {
               <label>Footer Brand Logo Image</label>
               <div className="admin-image-preview-container">
                 <img 
-                  src={content.footer.logo.startsWith('/assets') ? content.footer.logo : `${apiURL}${content.footer.logo}`} 
+                  src={getImageUrl(content.footer.logo)} 
                   alt="Footer Logo" 
                   className="admin-image-preview"
                 />

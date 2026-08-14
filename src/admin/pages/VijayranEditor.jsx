@@ -17,6 +17,14 @@ export default function VijayranEditor() {
 
   const apiURL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
+  const getImageUrl = (url) => {
+    if (!url) return '';
+    if (url.startsWith('/assets') || url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    return `${apiURL}${url}`;
+  };
+
   useEffect(() => {
     fetchPageData();
   }, []);
@@ -231,7 +239,7 @@ export default function VijayranEditor() {
               <label>Banner Background Image</label>
               <div className="admin-image-preview-container">
                 <img 
-                  src={content.hero.bgImage.startsWith('/assets') ? content.hero.bgImage : `${apiURL}${content.hero.bgImage}`} 
+                  src={getImageUrl(content.hero.bgImage)} 
                   alt="Banner BG" 
                   className="admin-image-preview"
                 />

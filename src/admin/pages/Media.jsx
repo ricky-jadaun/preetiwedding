@@ -176,7 +176,7 @@ export default function Media() {
             {images.map((img) => (
               <div key={img._id} className="admin-card" style={galleryCardStyle}>
                 <div style={imgWrapStyle}>
-                  <img src={`${apiURL}${img.url}`} alt={img.originalname} style={imgStyle} />
+                  <img src={img.url.startsWith('http') ? img.url : `${apiURL}${img.url}`} alt={img.originalname} style={imgStyle} />
                 </div>
                 <div style={infoContainerStyle}>
                   <div style={nameStyle} title={img.originalname}>
