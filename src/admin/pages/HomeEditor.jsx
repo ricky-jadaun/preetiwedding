@@ -351,8 +351,8 @@ export default function HomeEditor() {
               </span>
             </div>
 
-            <div className="admin-form-group">
-              <label>Hero Logo Image</label>
+             <div className="admin-form-group">
+              <label>Hero Logo Image (Desktop / Default)</label>
               <div className="admin-image-preview-container">
                 <img 
                   src={getImageUrl(content.hero.logo)} 
@@ -370,6 +370,30 @@ export default function HomeEditor() {
                   </button>
                   <span style={{ fontSize: '0.8rem', color: 'var(--admin-text-muted)' }}>
                     Current path: {content.hero.logo}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="admin-form-group">
+              <label>Hero Logo Image (Mobile - up to 768px)</label>
+              <div className="admin-image-preview-container">
+                <img 
+                  src={getImageUrl(content.hero.logoMobile || content.hero.logo)} 
+                  alt="Hero Logo Mobile" 
+                  className="admin-image-preview" 
+                  onError={(e) => { e.target.src = '/assets/images/p-h-logo.png'; }}
+                />
+                <div className="admin-image-actions">
+                  <button 
+                    type="button" 
+                    className="admin-btn admin-btn-accent admin-btn-sm"
+                    onClick={() => triggerImageSelect('hero.logoMobile')}
+                  >
+                    Change Image
+                  </button>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--admin-text-muted)' }}>
+                    Current path: {content.hero.logoMobile || 'None (Using default desktop logo)'}
                   </span>
                 </div>
               </div>

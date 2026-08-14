@@ -175,7 +175,18 @@ export default function FrenchHome() {
         
         <div className="container hero-content">
           <div className="logo-header-wrapper">
-            <img src={getImageUrl(content.hero.logo)} alt="PH Logo" />
+            {/* Desktop Logo (>= 768px) */}
+            <img 
+              src={getImageUrl(content.hero.logo)} 
+              alt="PH Logo" 
+              className="d-none d-md-block"
+            />
+            {/* Mobile Logo (< 768px) */}
+            <img 
+              src={getImageUrl(content.hero.logoMobile || content.hero.logo)} 
+              alt="PH Logo Mobile" 
+              className="d-block d-md-none"
+            />
             <h1>{content.hero.title}</h1>
           </div>
           <p>{content.hero.date}<br /><span style={{ color: 'var(--accent-dark)' }}>{content.hero.location}</span></p>
