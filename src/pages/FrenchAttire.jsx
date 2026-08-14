@@ -112,8 +112,9 @@ export default function FrenchAttire() {
 
         {/* Women's Attire Section */}
         <div className="my-5">
-          <h2 className="text-center mb-4" style={{ fontFamily: "'Playfair Display', serif", color: 'var(--text-main)' }}>
-            <i className="fa-solid fa-person-dress"></i> {content.sections.women.title}
+          <h2 className="text-center mb-4" style={{ fontFamily: "'Playfair Display', serif", color: 'var(--accent-dark)' }}>
+            {/* <i className="fa-solid fa-person-dress"></i>  */}
+            {content.sections.women.title}
           </h2>
           <div className="row g-4 justify-content-center">
             {content.sections.women.cards.map((card, idx) => (
@@ -132,8 +133,9 @@ export default function FrenchAttire() {
 
         {/* Men's Attire Section */}
         <div className="my-5 pt-4 border-top">
-          <h2 className="text-center mb-4" style={{ fontFamily: "'Playfair Display', serif", color: 'var(--text-main)' }}>
-            <i className="fa-solid fa-person"></i> {content.sections.men.title}
+          <h2 className="text-center mb-4" style={{ fontFamily: "'Playfair Display', serif", color: 'var(--accent-dark)'}}>
+            {/* <i className="fa-solid fa-person"></i>  */}
+            {content.sections.men.title}
           </h2>
           <div className="row g-4 justify-content-center">
             {content.sections.men.cards.map((card, idx) => (
