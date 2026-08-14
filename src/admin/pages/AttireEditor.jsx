@@ -90,10 +90,14 @@ export default function AttireEditor() {
       const parts = activeImageField.split('.');
       if (parts.length === 2) {
         updated[parts[0]][parts[1]] = url;
+      } else if (parts.length === 5) {
+        // e.g. sections.women.cards.0.image
+        const [sect, subSect, cardsKey, idx, fieldName] = parts;
+        updated[sect][subSect][cardsKey][parseInt(idx)][fieldName] = url;
       } else if (parts.length === 4) {
-        // e.g. sections.women.cards.[idx].image
-        const [sect, subSect, cardsKey, idx] = parts;
-        updated[sect][subSect][cardsKey][parseInt(idx)].image = url;
+        // e.g. women.cards.0.image
+        const [subSect, cardsKey, idx, fieldName] = parts;
+        updated[subSect][cardsKey][parseInt(idx)][fieldName] = url;
       }
       return updated;
     });
