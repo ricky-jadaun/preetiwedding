@@ -129,6 +129,12 @@ export default function RsvpList() {
                   <tr key={rsvp._id}>
                     <td>
                       <strong>{rsvp.firstName} {rsvp.lastName}</strong>
+                      {rsvp.childrenCount !== undefined && rsvp.childrenCount !== null && Number(rsvp.childrenCount) > 0 && (
+                        <div style={{ fontSize: '0.8rem', color: 'var(--admin-text-muted)', marginTop: '4px' }}>
+                          <i className="fa-solid fa-child" style={{ marginRight: '6px' }}></i>
+                          Children: {rsvp.childrenCount}
+                        </div>
+                      )}
                     </td>
                     <td>
                       <div>

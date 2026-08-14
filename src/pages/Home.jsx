@@ -24,6 +24,7 @@ export default function Home() {
   const [rsvpState, setRsvpState] = useState({
     firstName: '',
     lastName: '',
+    childrenCount: '',
     email: '',
     whatsapp: '',
     attending: '',
@@ -54,6 +55,7 @@ export default function Home() {
         setRsvpState({
           firstName: '',
           lastName: '',
+          childrenCount: '',
           email: '',
           whatsapp: '',
           attending: '',
@@ -464,7 +466,7 @@ export default function Home() {
                 onChange={e => setRsvpState(p => ({ ...p, firstName: e.target.value }))}
               />
             </div>
-            <div className="col-md-6">
+             <div className="col-md-6">
               <label className="form-label">{content.rsvpSection.lastNameLabel}</label>
               <input 
                 type="text" 
@@ -473,6 +475,17 @@ export default function Home() {
                 placeholder={content.rsvpSection.lastNamePlaceholder} 
                 value={rsvpState.lastName}
                 onChange={e => setRsvpState(p => ({ ...p, lastName: e.target.value }))}
+              />
+            </div>
+            <div className="col-md-6">
+              <label className="form-label">{content.rsvpSection.childrenCountLabel || 'Number of Children'}</label>
+              <input 
+                type="number" 
+                min="0"
+                className="form-control form-control-custom" 
+                placeholder={content.rsvpSection.childrenCountPlaceholder || 'Enter number of children'} 
+                value={rsvpState.childrenCount}
+                onChange={e => setRsvpState(p => ({ ...p, childrenCount: e.target.value }))}
               />
             </div>
             <div className="col-md-6">

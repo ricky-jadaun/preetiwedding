@@ -851,6 +851,25 @@ export default function HomeEditor() {
               </div>
 
               <div className="admin-form-group">
+                <label>Number of Children Label</label>
+                <input 
+                  type="text" 
+                  className="admin-input" 
+                  value={content.rsvpSection.childrenCountLabel || ''}
+                  onChange={(e) => handleFieldChange('rsvpSection', 'childrenCountLabel', e.target.value)}
+                />
+              </div>
+              <div className="admin-form-group">
+                <label>Number of Children Placeholder</label>
+                <input 
+                  type="text" 
+                  className="admin-input" 
+                  value={content.rsvpSection.childrenCountPlaceholder || ''}
+                  onChange={(e) => handleFieldChange('rsvpSection', 'childrenCountPlaceholder', e.target.value)}
+                />
+              </div>
+
+              <div className="admin-form-group">
                 <label>Email Address Label</label>
                 <input 
                   type="text" 
