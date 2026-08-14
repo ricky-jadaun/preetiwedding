@@ -4,39 +4,53 @@ import { useLocation } from 'react-router-dom';
 export default function ScrollToHashElement() {
   const { hash, pathname } = useLocation();
 
-  const scrollToElement = (id) => {
-    let retries = 0;
-    const maxRetries = 10;
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo(0, 0);
+      return;
+    }
 
-    const attemptScroll = () => {
-      const element = document.getElementById(id);
-      if (element) {
-        const navbar = document.getElementById('mainNav') || document.querySelector('.navbar');
-        const offset = navbar ? navbar.offsetHeight : 80;
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - offset;
+    const targetId = hash.substring(1);
+    
+    // Helper function to scroll to the element with navbar offset
+    const scrollToElement = (element) => {
+      const navbar = document.getElementById('mainNav') || document.querySelector('.navbar');
+      const offset = navbar ? navbar.offsetHeight : 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      } else if (retries < maxRetries) {
-        retries++;
-        setTimeout(attemptScroll, 100);
-      }
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     };
 
-    attemptScroll();
-  };
-
-  // Handle route change / initial load with hash
-  useEffect(() => {
-    if (hash) {
-      const targetId = hash.substring(1);
-      scrollToElement(targetId);
-    } else {
-      window.scrollTo(0, 0);
+    // 1. Try to find the element immediately
+    const immediateElement = document.getElementById(targetId);
+    if (immediateElement) {
+      const timer = setTimeout(() => scrollToElement(immediateElement), 50);
+      return () => clearTimeout(timer);
     }
+
+    // 2. If it doesn't exist yet (e.g. page is fetching/loading), observe the DOM
+    const observer = new MutationObserver((mutations, obs) => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        // Small delay to ensure any styling and child elements are fully rendered/laid out
+        setTimeout(() => {
+          scrollToElement(element);
+        }, 50);
+        obs.disconnect(); // stop observing once scrolled
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    // Clean up observer on hash or pathname change
+    return () => observer.disconnect();
   }, [hash, pathname]);
 
   // Handle clicks on same-page hash links (even if hash is the same)
@@ -57,7 +71,17 @@ export default function ScrollToHashElement() {
           const element = document.getElementById(targetId);
           if (element) {
             e.preventDefault();
-            scrollToElement(targetId);
+            
+            const navbar = document.getElementById('mainNav') || document.querySelector('.navbar');
+            const offset = navbar ? navbar.offsetHeight : 80;
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+
             // Update hash in address bar if it changed
             if (window.location.hash !== url.hash) {
               window.history.pushState(null, '', url.hash);
