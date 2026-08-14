@@ -322,6 +322,12 @@ export default function FrenchHome() {
                         <div className="itinerary-body col-md-9">
                           <h3 className="itinerary-title">{card.title}</h3>
                           <p className="itinerary-desc">{card.description}</p>
+                          
+                          {card.dressCode && (
+                            <div className="mb-3">
+                              <span className="dress-code-badge" style={{ marginTop: 0 }}>{card.dressCode}</span>
+                            </div>
+                          )}
 
                           {((card.btnText && card.btnLink) || card.link1Url || card.link2Url || card.link3Url) && (
                             <div className="d-flex flex-wrap gap-2 mb-2">
@@ -361,9 +367,6 @@ export default function FrenchHome() {
                             </div>
                           )}
 
-                          {card.dressCode && (
-                            <span className="dress-code-badge">{card.dressCode}</span>
-                          )}
                           {card.note && (
                             <p className="small text-muted mt-2">
                               <i className="fa-solid fa-circle-exclamation"></i> {card.note}
