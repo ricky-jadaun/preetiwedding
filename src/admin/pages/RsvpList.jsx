@@ -117,6 +117,7 @@ export default function RsvpList() {
                   <th>Name</th>
                   <th>Contact Info</th>
                   <th>Attendance</th>
+                  <th>Children</th>
                   <th>Travel Dates (India)</th>
                   <th>Dietary Restrictions</th>
                   <th>Comments / Special Needs</th>
@@ -129,12 +130,6 @@ export default function RsvpList() {
                   <tr key={rsvp._id}>
                     <td>
                       <strong>{rsvp.firstName} {rsvp.lastName}</strong>
-                      {rsvp.childrenCount !== undefined && rsvp.childrenCount !== null && Number(rsvp.childrenCount) > 0 && (
-                        <div style={{ fontSize: '0.8rem', color: 'var(--admin-text-muted)', marginTop: '4px' }}>
-                          <i className="fa-solid fa-child" style={{ marginRight: '6px' }}></i>
-                          Children: {rsvp.childrenCount}
-                        </div>
-                      )}
                     </td>
                     <td>
                       <div>
@@ -155,6 +150,13 @@ export default function RsvpList() {
                         <span className="rsvp-badge rsvp-badge-decline">
                           <i className="fa-solid fa-circle-xmark"></i> Declined
                         </span>
+                      )}
+                    </td>
+                    <td>
+                      {rsvp.childrenCount !== undefined && rsvp.childrenCount !== null ? (
+                        <strong>{rsvp.childrenCount}</strong>
+                      ) : (
+                        <span style={{ color: 'var(--admin-text-muted)', fontSize: '0.8rem' }}>0</span>
                       )}
                     </td>
                     <td>{rsvp.datesInIndia || <span style={{ color: 'var(--admin-text-muted)', fontSize: '0.8rem' }}>N/A</span>}</td>
