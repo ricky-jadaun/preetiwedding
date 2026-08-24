@@ -875,6 +875,25 @@ export default function HomeEditor() {
               </div>
 
               <div className="admin-form-group">
+                <label>Number of Adults Label</label>
+                <input 
+                  type="text" 
+                  className="admin-input" 
+                  value={content.rsvpSection.adultsCountLabel || ''}
+                  onChange={(e) => handleFieldChange('rsvpSection', 'adultsCountLabel', e.target.value)}
+                />
+              </div>
+              <div className="admin-form-group">
+                <label>Number of Adults Placeholder</label>
+                <input 
+                  type="text" 
+                  className="admin-input" 
+                  value={content.rsvpSection.adultsCountPlaceholder || ''}
+                  onChange={(e) => handleFieldChange('rsvpSection', 'adultsCountPlaceholder', e.target.value)}
+                />
+              </div>
+
+              <div className="admin-form-group">
                 <label>Number of Children Label</label>
                 <input 
                   type="text" 
@@ -890,6 +909,25 @@ export default function HomeEditor() {
                   className="admin-input" 
                   value={content.rsvpSection.childrenCountPlaceholder || ''}
                   onChange={(e) => handleFieldChange('rsvpSection', 'childrenCountPlaceholder', e.target.value)}
+                />
+              </div>
+
+              <div className="admin-form-group">
+                <label>Age of Children Label</label>
+                <input 
+                  type="text" 
+                  className="admin-input" 
+                  value={content.rsvpSection.childrenAgeLabel || ''}
+                  onChange={(e) => handleFieldChange('rsvpSection', 'childrenAgeLabel', e.target.value)}
+                />
+              </div>
+              <div className="admin-form-group">
+                <label>Age of Children Placeholder</label>
+                <input 
+                  type="text" 
+                  className="admin-input" 
+                  value={content.rsvpSection.childrenAgePlaceholder || ''}
+                  onChange={(e) => handleFieldChange('rsvpSection', 'childrenAgePlaceholder', e.target.value)}
                 />
               </div>
 

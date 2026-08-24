@@ -24,7 +24,9 @@ export default function FrenchHome() {
   const [rsvpState, setRsvpState] = useState({
     firstName: '',
     lastName: '',
+    adultsCount: '',
     childrenCount: '',
+    childrenAge: '',
     email: '',
     whatsapp: '',
     attending: '',
@@ -55,7 +57,9 @@ export default function FrenchHome() {
         setRsvpState({
           firstName: '',
           lastName: '',
+          adultsCount: '',
           childrenCount: '',
+          childrenAge: '',
           email: '',
           whatsapp: '',
           attending: '',
@@ -486,6 +490,17 @@ export default function FrenchHome() {
               />
             </div>
             <div className="col-md-6">
+              <label className="form-label">{content.rsvpSection.adultsCountLabel || "Nombre d'adultes"}</label>
+              <input 
+                type="number" 
+                min="1"
+                className="form-control form-control-custom" 
+                placeholder={content.rsvpSection.adultsCountPlaceholder || "Entrez le nombre d'adultes"} 
+                value={rsvpState.adultsCount}
+                onChange={e => setRsvpState(p => ({ ...p, adultsCount: e.target.value }))}
+              />
+            </div>
+            <div className="col-md-6">
               <label className="form-label">{content.rsvpSection.childrenCountLabel || "Nombre d'enfants"}</label>
               <input 
                 type="number" 
@@ -494,6 +509,16 @@ export default function FrenchHome() {
                 placeholder={content.rsvpSection.childrenCountPlaceholder || "Entrez le nombre d'enfants"} 
                 value={rsvpState.childrenCount}
                 onChange={e => setRsvpState(p => ({ ...p, childrenCount: e.target.value }))}
+              />
+            </div>
+            <div className="col-md-6">
+              <label className="form-label">{content.rsvpSection.childrenAgeLabel || "Âge des enfants (ex. 5, 8)"}</label>
+              <input 
+                type="text" 
+                className="form-control form-control-custom" 
+                placeholder={content.rsvpSection.childrenAgePlaceholder || "Entrez l'âge des enfants"} 
+                value={rsvpState.childrenAge}
+                onChange={e => setRsvpState(p => ({ ...p, childrenAge: e.target.value }))}
               />
             </div>
             <div className="col-md-6">

@@ -117,7 +117,9 @@ export default function RsvpList() {
                   <th>Name</th>
                   <th>Contact Info</th>
                   <th>Attendance</th>
+                  <th>Adults</th>
                   <th>Children</th>
+                  <th>Age of Children</th>
                   <th>Travel Dates (India)</th>
                   <th>Dietary Restrictions</th>
                   <th>Comments / Special Needs</th>
@@ -153,11 +155,21 @@ export default function RsvpList() {
                       )}
                     </td>
                     <td>
+                      {rsvp.adultsCount !== undefined && rsvp.adultsCount !== null ? (
+                        <strong>{rsvp.adultsCount}</strong>
+                      ) : (
+                        <span style={{ color: 'var(--admin-text-muted)', fontSize: '0.8rem' }}>-</span>
+                      )}
+                    </td>
+                    <td>
                       {rsvp.childrenCount !== undefined && rsvp.childrenCount !== null ? (
                         <strong>{rsvp.childrenCount}</strong>
                       ) : (
                         <span style={{ color: 'var(--admin-text-muted)', fontSize: '0.8rem' }}>0</span>
                       )}
+                    </td>
+                    <td>
+                      {rsvp.childrenAge || <span style={{ color: 'var(--admin-text-muted)', fontSize: '0.8rem' }}>-</span>}
                     </td>
                     <td>{rsvp.datesInIndia || <span style={{ color: 'var(--admin-text-muted)', fontSize: '0.8rem' }}>N/A</span>}</td>
                     <td>{rsvp.dietary || <span style={{ color: 'var(--admin-text-muted)', fontSize: '0.8rem' }}>None</span>}</td>
