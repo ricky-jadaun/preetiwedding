@@ -709,7 +709,7 @@ export default function AttireEditor() {
                 />
               </div>
               <div className="admin-form-group" style={{ marginBottom: '0' }}>
-                <label style={{ fontSize: '0.8rem', color: '#0c4a6e' }}>Alert Description Text</label>
+                <label style={{ fontSize: '0.8rem', color: '#0c4a6e' }}>Alert HTML/Text Content</label>
                 <textarea 
                   className="admin-textarea" 
                   rows="3" 

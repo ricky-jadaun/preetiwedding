@@ -234,7 +234,7 @@ export default function Attire() {
               </div>
               <div className="p-3 border-start border-info bg-light mt-3">
                 <h5 className="text-info"><i className="fa-solid fa-circle-info"></i> {content.sections.styling.infos.title}</h5>
-                <p className="mb-0 text-muted">{content.sections.styling.infos.text}</p>
+                <p className="mb-0 text-muted" dangerouslySetInnerHTML={{ __html: content.sections.styling.infos.text }}></p>
               </div>
             </div>
           </div>
