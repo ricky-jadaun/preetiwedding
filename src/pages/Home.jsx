@@ -389,7 +389,7 @@ export default function Home() {
 
                           {card.note && (
                             <p className="small text-muted mt-2">
-                              <i className="fa-solid fa-circle-exclamation"></i> {card.note}
+                              <i className="fa-solid fa-circle-exclamation"></i> <span dangerouslySetInnerHTML={{ __html: card.note }} />
                             </p>
                           )}
                         </div>
