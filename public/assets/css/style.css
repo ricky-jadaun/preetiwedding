@@ -1251,8 +1251,88 @@
             padding-top: 10px;
             border-top: 1px dashed rgba(234, 220, 198, 0.6);
             display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 6px;
+        }
+
+        .accommodation-card-location {
+            font-size: 0.84rem;
+            color: #555;
+            display: flex;
             align-items: center;
-            justify-content: space-between;
+        }
+
+        .btn-accommodation-map {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 8px 14px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            color: var(--accent-dark);
+            background-color: rgba(214, 184, 140, 0.16);
+            border: 1px solid var(--accent-gold);
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+
+        .btn-accommodation-map:hover {
+            color: #ffffff;
+            background-color: var(--accent-dark);
+            border-color: var(--accent-dark);
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(121, 92, 52, 0.18);
+        }
+
+        .btn-accommodation-map i.fa-map-location-dot {
+            color: var(--accent-dark);
+            font-size: 0.88rem;
+            transition: color 0.25s ease;
+        }
+
+        .btn-accommodation-map:hover i.fa-map-location-dot {
+            color: #ffffff;
+        }
+
+        .accommodation-map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            background-color: rgba(214, 184, 140, 0.18);
+            border: 1px solid rgba(214, 184, 140, 0.45);
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .accommodation-map-link:hover {
+            color: #ffffff;
+            background-color: var(--accent-dark);
+            border-color: var(--accent-dark);
+            text-decoration: none;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(121, 92, 52, 0.15);
+        }
+
+        .accommodation-map-link i.fa-map-location-dot {
+            color: var(--accent-dark);
+            font-size: 0.82rem;
+            transition: color 0.2s ease;
+        }
+
+        .accommodation-map-link:hover i.fa-map-location-dot {
+            color: #ffffff;
         }
 
         .accommodation-airbnb-box {

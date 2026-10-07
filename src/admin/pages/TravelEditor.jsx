@@ -32,6 +32,7 @@ export default function TravelEditor() {
     descriptionEn: '',
     descriptionFr: '',
     location: '',
+    mapLink: '',
     image: '',
     link: '',
     order: 1,
@@ -129,6 +130,7 @@ export default function TravelEditor() {
       descriptionEn: '',
       descriptionFr: '',
       location: '',
+      mapLink: '',
       image: '',
       link: '',
       order: currentRecs.length + 1,
@@ -152,6 +154,7 @@ export default function TravelEditor() {
       descriptionEn: lang === 'en' ? item.description || '' : altItem?.description || '',
       descriptionFr: lang === 'fr' ? item.description || '' : altItem?.description || '',
       location: item.location || '',
+      mapLink: item.mapLink || item.googleMapLink || '',
       image: item.image || '',
       link: item.link || '',
       order: item.order !== undefined ? item.order : 1,
@@ -187,6 +190,7 @@ export default function TravelEditor() {
             stars: parsedStars,
             description: lang === 'en' ? accomForm.descriptionEn : (accomForm.descriptionFr || accomForm.descriptionEn),
             location: accomForm.location,
+            mapLink: accomForm.mapLink || '',
             image: accomForm.image,
             link: accomForm.link,
             order: parsedOrder,
@@ -203,6 +207,7 @@ export default function TravelEditor() {
           stars: parsedStars,
           description: lang === 'en' ? accomForm.descriptionEn : (accomForm.descriptionFr || accomForm.descriptionEn),
           location: accomForm.location,
+          mapLink: accomForm.mapLink || '',
           image: accomForm.image,
           link: accomForm.link,
           order: parsedOrder,
@@ -234,6 +239,7 @@ export default function TravelEditor() {
             stars: parsedStars,
             description: altLang === 'en' ? accomForm.descriptionEn : (accomForm.descriptionFr || accomForm.descriptionEn),
             location: accomForm.location,
+            mapLink: accomForm.mapLink || '',
             image: accomForm.image,
             link: accomForm.link,
             order: parsedOrder,
@@ -250,6 +256,7 @@ export default function TravelEditor() {
           stars: parsedStars,
           description: altLang === 'en' ? accomForm.descriptionEn : (accomForm.descriptionFr || accomForm.descriptionEn),
           location: accomForm.location,
+          mapLink: accomForm.mapLink || '',
           image: accomForm.image,
           link: accomForm.link,
           order: parsedOrder,
@@ -992,9 +999,19 @@ export default function TravelEditor() {
                             <td style={{ padding: '10px 8px' }}>
                               <strong style={{ color: 'var(--admin-primary)', fontSize: '0.92rem' }}>{item.name}</strong>
                               {item.link && (
-                                <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ marginLeft: '8px', color: 'var(--admin-accent)', fontSize: '0.75rem' }}>
+                                <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ marginLeft: '8px', color: 'var(--admin-accent)', fontSize: '0.75rem' }} title="Visit Website">
                                   <i className="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
+                              )}
+                              {item.mapLink && (
+                                <a href={item.mapLink} target="_blank" rel="noopener noreferrer" style={{ marginLeft: '6px', color: '#16a34a', fontSize: '0.8rem' }} title="Open Google Maps Location">
+                                  <i className="fa-solid fa-map-location-dot"></i>
+                                </a>
+                              )}
+                              {item.location && (
+                                <div style={{ fontSize: '0.78rem', color: '#475569', marginTop: '2px' }}>
+                                  <i className="fa-solid fa-location-dot me-1" style={{ fontSize: '0.72rem' }}></i>{item.location}
+                                </div>
                               )}
                               {item.description && (
                                 <div style={{ fontSize: '0.78rem', color: '#64748b', marginTop: '2px' }}>{item.description}</div>
@@ -1494,6 +1511,36 @@ export default function TravelEditor() {
                     value={accomForm.link}
                     onChange={(e) => setAccomForm({ ...accomForm, link: e.target.value })}
                   />
+                </div>
+              </div>
+
+              <div className="admin-form-group">
+                <label style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <i className="fa-solid fa-map-location-dot" style={{ color: 'var(--admin-accent)' }}></i>
+                  <span>Google Maps Location Link (optional)</span>
+                </label>
+                <input
+                  type="url"
+                  className="admin-input"
+                  placeholder="https://maps.app.goo.gl/... or https://maps.google.com/..."
+                  value={accomForm.mapLink || ''}
+                  onChange={(e) => setAccomForm({ ...accomForm, mapLink: e.target.value })}
+                />
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4px' }}>
+                  <small style={{ color: 'var(--admin-text-muted)', fontSize: '0.75rem' }}>
+                    Paste Google Maps share link so wedding guests can easily navigate to this hotel / stay.
+                  </small>
+                  {accomForm.mapLink && (
+                    <a
+                      href={accomForm.mapLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ fontSize: '0.78rem', color: 'var(--admin-accent)', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', marginLeft: '10px' }}
+                      title="Test Google Maps Link"
+                    >
+                      <i className="fa-solid fa-arrow-up-right-from-square me-1"></i> Test Link
+                    </a>
+                  )}
                 </div>
               </div>
 

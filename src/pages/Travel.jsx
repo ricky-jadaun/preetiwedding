@@ -54,6 +54,14 @@ export default function Travel() {
     .filter((r) => r.city === 'jaipur' && r.category === 'hotel' && r.active !== false)
     .sort((a, b) => (a.order || 0) - (b.order || 0));
 
+  const getMapUrl = (item) => {
+    if (item.mapLink && item.mapLink.trim()) {
+      return item.mapLink.trim();
+    }
+    const query = [item.name, item.location, item.city, 'India'].filter(Boolean).join(', ');
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  };
+
   return (
     <>
       {/* Navbar */}
@@ -202,11 +210,27 @@ export default function Travel() {
                             <p className="accommodation-card-desc">{item.description}</p>
                           ) : null}
                         </div>
-                        {item.location && (
-                          <div className="accommodation-card-footer">
-                            <small className="text-muted"><i className="fa-solid fa-location-dot me-1"></i>{item.location}</small>
-                          </div>
-                        )}
+                        <div className="accommodation-card-footer">
+                          {item.location && (
+                            <div className="accommodation-card-location mb-2">
+                              <small className="text-muted">
+                                <i className="fa-solid fa-location-dot me-1 text-danger"></i>
+                                {item.location}
+                              </small>
+                            </div>
+                          )}
+                          <a 
+                            href={getMapUrl(item)} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="btn-accommodation-map"
+                            title={`Open ${item.name} on Google Maps`}
+                          >
+                            <i className="fa-solid fa-map-location-dot me-2"></i>
+                            <span>View on Google Maps</span>
+                            <i className="fa-solid fa-arrow-up-right-from-square ms-2" style={{ fontSize: '0.72rem' }}></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -255,11 +279,27 @@ export default function Travel() {
                             <p className="accommodation-card-desc">{item.description}</p>
                           ) : null}
                         </div>
-                        {item.location && (
-                          <div className="accommodation-card-footer">
-                            <small className="text-muted"><i className="fa-solid fa-location-dot me-1"></i>{item.location}</small>
-                          </div>
-                        )}
+                        <div className="accommodation-card-footer">
+                          {item.location && (
+                            <div className="accommodation-card-location mb-2">
+                              <small className="text-muted">
+                                <i className="fa-solid fa-location-dot me-1 text-danger"></i>
+                                {item.location}
+                              </small>
+                            </div>
+                          )}
+                          <a 
+                            href={getMapUrl(item)} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="btn-accommodation-map"
+                            title={`Open ${item.name} on Google Maps`}
+                          >
+                            <i className="fa-solid fa-map-location-dot me-2"></i>
+                            <span>View on Google Maps</span>
+                            <i className="fa-solid fa-arrow-up-right-from-square ms-2" style={{ fontSize: '0.72rem' }}></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -362,11 +402,27 @@ export default function Travel() {
                             <p className="accommodation-card-desc">{item.description}</p>
                           ) : null}
                         </div>
-                        {item.location && (
-                          <div className="accommodation-card-footer">
-                            <small className="text-muted"><i className="fa-solid fa-location-dot me-1"></i>{item.location}</small>
-                          </div>
-                        )}
+                        <div className="accommodation-card-footer">
+                          {item.location && (
+                            <div className="accommodation-card-location mb-2">
+                              <small className="text-muted">
+                                <i className="fa-solid fa-location-dot me-1 text-danger"></i>
+                                {item.location}
+                              </small>
+                            </div>
+                          )}
+                          <a 
+                            href={getMapUrl(item)} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="btn-accommodation-map"
+                            title={`Open ${item.name} on Google Maps`}
+                          >
+                            <i className="fa-solid fa-map-location-dot me-2"></i>
+                            <span>View on Google Maps</span>
+                            <i className="fa-solid fa-arrow-up-right-from-square ms-2" style={{ fontSize: '0.72rem' }}></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   ))}
